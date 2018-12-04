@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CognitiveSamples", "CognitiveSamples\CognitiveSamples.csproj", "{98026BA6-A662-46FC-926C-EF1BF73F0F9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.CustomSearch", "BingCustomSearchSamples\BingSearchSamples.CustomSearch.csproj", "{FF42D19C-65F4-48FE-8BF0-4DC89CBF43CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{98026BA6-A662-46FC-926C-EF1BF73F0F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98026BA6-A662-46FC-926C-EF1BF73F0F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98026BA6-A662-46FC-926C-EF1BF73F0F9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF42D19C-65F4-48FE-8BF0-4DC89CBF43CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF42D19C-65F4-48FE-8BF0-4DC89CBF43CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF42D19C-65F4-48FE-8BF0-4DC89CBF43CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF42D19C-65F4-48FE-8BF0-4DC89CBF43CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
