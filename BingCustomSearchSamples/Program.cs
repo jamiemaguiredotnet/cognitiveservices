@@ -10,8 +10,11 @@ namespace BingSearchSamples.CustomSearch
     {
         static void Main(string[] args)
         {
-            var subscriptionKey = "YOUR-SUBSCRIPTION-KEY";
-            var customConfigId = "YOUR-CUSTOM-CONFIG-ID";
+            //var subscriptionKey = "YOUR-SUBSCRIPTION-KEY";
+            //var customConfigId = "YOUR-CUSTOM-CONFIG-ID";
+
+            string subscriptionKey = "ebc25e481b50416bac331e703ac7f1e1";
+            string customConfigId = "f7e6d23c-b3ed-4e4a-9bd2-7099e90d2140";
 
             var searchTerm = "Twitter";
 

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CognitiveSamples", "Cogniti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.CustomSearch", "BingCustomSearchSamples\BingSearchSamples.CustomSearch.csproj", "{FF42D19C-65F4-48FE-8BF0-4DC89CBF43CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.WebSearch", "BingSearchSamples.WebSearch\BingSearchSamples.WebSearch.csproj", "{8146E4EA-31F7-4FAC-98BB-088C487A5AC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FF42D19C-65F4-48FE-8BF0-4DC89CBF43CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF42D19C-65F4-48FE-8BF0-4DC89CBF43CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF42D19C-65F4-48FE-8BF0-4DC89CBF43CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8146E4EA-31F7-4FAC-98BB-088C487A5AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8146E4EA-31F7-4FAC-98BB-088C487A5AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8146E4EA-31F7-4FAC-98BB-088C487A5AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8146E4EA-31F7-4FAC-98BB-088C487A5AC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
