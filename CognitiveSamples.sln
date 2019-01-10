@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.CustomSea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.WebSearch", "BingSearchSamples.WebSearch\BingSearchSamples.WebSearch.csproj", "{8146E4EA-31F7-4FAC-98BB-088C487A5AC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.VisualSearch", "BingSearchSamples.VisualSearch\BingSearchSamples.VisualSearch.csproj", "{D5ED5634-406F-45EC-A48E-E3F31356A9BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8146E4EA-31F7-4FAC-98BB-088C487A5AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8146E4EA-31F7-4FAC-98BB-088C487A5AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8146E4EA-31F7-4FAC-98BB-088C487A5AC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5ED5634-406F-45EC-A48E-E3F31356A9BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5ED5634-406F-45EC-A48E-E3F31356A9BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5ED5634-406F-45EC-A48E-E3F31356A9BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5ED5634-406F-45EC-A48E-E3F31356A9BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
