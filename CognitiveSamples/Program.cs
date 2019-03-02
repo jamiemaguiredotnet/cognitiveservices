@@ -10,6 +10,8 @@ using Tweetinvi.Models;
 using System.Configuration;
 using Tweetinvi;
 using Tweetinvi.Parameters;
+using CognitiveSamples.LUIS;
+using Newtonsoft.Json;
 
 namespace CognitiveSamples
 {
@@ -54,6 +56,7 @@ namespace CognitiveSamples
             }
         }
 
+
         private static void ProcessSentiment(string tweetid,string text)
         {
             ITextAnalyticsAPI client = new TextAnalyticsAPI(new ApiKeyServiceClientCredentials());
@@ -62,14 +65,27 @@ namespace CognitiveSamples
             SentimentBatchResult results = client.SentimentAsync(
                     new MultiLanguageBatchInput(
                         new List<MultiLanguageInput>()
-                        {
-                          new MultiLanguageInput("en", tweetid + ":" + text, text),
-                                                 })).Result;
+                        {new MultiLanguageInput("en", tweetid + ":" + text, text), })).Result;
 
             foreach (var document in results.Documents)
             {
                 Console.WriteLine("Document ID: {0} , Sentiment Score: {1:0.00}", document.Id, document.Score);
             }
+        }
+
+        private async static Task<LUISResult> GetLUISResult(string message)
+        {
+            var client = new HttpClient();
+
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "0b86ab46c22944e2a5e7f4f79a6db05d");
+            var uri = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/bb1db568-7477-4682-a427-aa761960138f?subscription-key=0b86ab46c22944e2a5e7f4f79a6db05d&timezoneOffset=0&verbose=true&q=" + message;
+
+            HttpResponseMessage response = await client.GetAsync(uri);
+            var result = await response.Content.ReadAsStringAsync();
+
+            LUISResult lr = JsonConvert.DeserializeObject<LUISResult>(result);
+
+            return lr;
         }
 
         private static void GetTweetsByHashTag(string hashtag)
@@ -93,14 +109,24 @@ namespace CognitiveSamples
 
             foreach (ITweet tweet in tweets)
             {
-                ProcessSentiment(tweet.IdStr, tweet.Text);
-                ProcessKeyPhrases(tweet.IdStr, tweet.Text);
             }
         }
 
         static void Main(string[] args)
         {
-            GetTweetsByHashTag("#machinelearning");
+            //GetTweetsByHashTag("#machinelearning");
+
+            //ProcessSentiment("1", "I love this new iphone");
+            //ProcessSentiment("2", "I can't stand this new iphone");
+            //ProcessSentiment("3", "I'm undecided about this new iphone, will wait a few more weeks");
+
+
+            //ProcessKeyPhrases("1", "I love this new iphone, almost got a samsung instead!");
+            //ProcessKeyPhrases("2", "I can't stand this new iphone");
+            //ProcessKeyPhrases("3", "I can't make my mind up about this new iphone, I need to play with some more of its features");
+
+            LUISResult lUISResultLead = GetLUISResult("I'm thinking of getting a new phone, any recommendations?").Result;
+            LUISResult lUISResultNoLead = GetLUISResult("I doubt I'll get a new phone this month").Result;
         }
     }
 }

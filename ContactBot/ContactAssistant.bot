@@ -1,0 +1,26 @@
+{
+  "name": "ContactAssistant",
+  "description": "",
+  "services": [
+    {
+      "type": "endpoint",
+      "id": "1",
+      "name": "development",
+      "appId": "",
+      "appPassword": "",
+      "endpoint": "http://localhost:3978/api/messages"
+    },
+    {
+      "type": "luis",
+      "name": "LuisBot",
+      "appId": "",
+      "version": "0.1",
+      "authoringKey": "",
+      "subscriptionKey": "",
+      "region": "westus",
+      "id": "2"
+    }
+  ],
+  "padlock": "",
+  "version": "2.0"
+}

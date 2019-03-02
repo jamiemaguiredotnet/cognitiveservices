@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CognitiveSamples", "CognitiveSamples\CognitiveSamples.csproj", "{98026BA6-A662-46FC-926C-EF1BF73F0F9D}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.WebSearch", "BingSearchSamples.WebSearch\BingSearchSamples.WebSearch.csproj", "{8146E4EA-31F7-4FAC-98BB-088C487A5AC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.VisualSearch", "BingSearchSamples.VisualSearch\BingSearchSamples.VisualSearch.csproj", "{D5ED5634-406F-45EC-A48E-E3F31356A9BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.ImageSearch", "BingSearchSamples.ImageSearch\BingSearchSamples.ImageSearch.csproj", "{90D0D71A-550A-4513-B3C8-AB7C2699D7AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactAssistant", "ContactBot\ContactAssistant.csproj", "{1D6AD935-B40A-4136-A229-9BE1DA49FBA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +37,19 @@ Global
 		{D5ED5634-406F-45EC-A48E-E3F31356A9BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5ED5634-406F-45EC-A48E-E3F31356A9BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5ED5634-406F-45EC-A48E-E3F31356A9BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90D0D71A-550A-4513-B3C8-AB7C2699D7AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D0D71A-550A-4513-B3C8-AB7C2699D7AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D0D71A-550A-4513-B3C8-AB7C2699D7AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D0D71A-550A-4513-B3C8-AB7C2699D7AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D6AD935-B40A-4136-A229-9BE1DA49FBA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D6AD935-B40A-4136-A229-9BE1DA49FBA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D6AD935-B40A-4136-A229-9BE1DA49FBA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D6AD935-B40A-4136-A229-9BE1DA49FBA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A03890F2-E8DE-43D8-8E83-A7C0D0714606}
 	EndGlobalSection
 EndGlobal
