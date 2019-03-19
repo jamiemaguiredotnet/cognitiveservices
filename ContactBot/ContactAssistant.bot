@@ -13,9 +13,9 @@
     {
       "type": "luis",
       "name": "LuisBot",
-      "appId": "",
+      "appId": "3f034821-9dd3-4714-befb-9ff99bdd568d",
       "version": "0.1",
-      "authoringKey": "",
+      "authoringKey": "90620a8707e94fd58bf6015af53bb2a6",
       "subscriptionKey": "",
       "region": "westus",
       "id": "2"

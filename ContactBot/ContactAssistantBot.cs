@@ -25,6 +25,10 @@ namespace ContactAssistant
         public const string CancelIntent = "Cancel";
         public const string HelpIntent = "Help";
         public const string NoneIntent = "None";
+        public const string ContactAdd = "Contact_Add";
+        public const string ContactDelete = "Contact_Delete";
+        public const string ContactView = "Contact_View";
+        
 
         /// <summary>
         /// Key in the bot config (.bot file) for the LUIS instance.
@@ -116,6 +120,18 @@ namespace ContactAssistant
                             {
                                 case GreetingIntent:
                                     await dc.BeginDialogAsync(nameof(GreetingDialog));
+                                    break;
+                                case ContactAdd:
+                                    Console.WriteLine("Entered Contact Add");
+                                    //await dc.BeginDialogAsync(nameof(AddContactDialog));
+                                    break;
+                                case ContactDelete:
+                                    Console.WriteLine("Entered Contact Delete");
+                                    //await dc.BeginDialogAsync(nameof(DeleteContactDialog));
+                                    break;
+                                case ContactView:
+                                    Console.WriteLine("Entered Contact View");
+                                    //await dc.BeginDialogAsync(nameof(ViewContactsDialog));
                                     break;
 
                                 case NoneIntent:
