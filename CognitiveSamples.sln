@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.VisualSea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.ImageSearch", "BingSearchSamples.ImageSearch\BingSearchSamples.ImageSearch.csproj", "{90D0D71A-550A-4513-B3C8-AB7C2699D7AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactAssistant", "ContactBot\ContactAssistant.csproj", "{1D6AD935-B40A-4136-A229-9BE1DA49FBA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactAssistant", "ContactBot\ContactAssistant.csproj", "{1D6AD935-B40A-4136-A229-9BE1DA49FBA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.EntitySearch", "BingSearchSamples.EntitySearch\BingSearchSamples.EntitySearch.csproj", "{6BB815EB-BA79-4C19-B9D0-407AD93C600B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{1D6AD935-B40A-4136-A229-9BE1DA49FBA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D6AD935-B40A-4136-A229-9BE1DA49FBA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D6AD935-B40A-4136-A229-9BE1DA49FBA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BB815EB-BA79-4C19-B9D0-407AD93C600B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB815EB-BA79-4C19-B9D0-407AD93C600B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB815EB-BA79-4C19-B9D0-407AD93C600B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB815EB-BA79-4C19-B9D0-407AD93C600B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
