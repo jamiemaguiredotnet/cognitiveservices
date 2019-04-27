@@ -1,26 +1,34 @@
 {
-  "name": "ContactAssistant",
-  "description": "",
-  "services": [
-    {
-      "type": "endpoint",
-      "id": "1",
-      "name": "development",
-      "appId": "",
-      "appPassword": "",
-      "endpoint": "http://localhost:3978/api/messages"
-    },
-    {
-      "type": "luis",
-      "name": "LuisBot",
-      "appId": "3f034821-9dd3-4714-befb-9ff99bdd568d",
-      "version": "0.1",
-      "authoringKey": "90620a8707e94fd58bf6015af53bb2a6",
-      "subscriptionKey": "",
-      "region": "westus",
-      "id": "2"
-    }
-  ],
-  "padlock": "",
-  "version": "2.0"
+    "name": "ContactAssistant",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:3978/api/messages",
+            "id": "1",
+            "name": "development"
+        },
+        {
+            "type": "luis",
+            "appId": "3f034821-9dd3-4714-befb-9ff99bdd568d",
+            "authoringKey": "90620a8707e94fd58bf6015af53bb2a6",
+            "id": "2",
+            "name": "LuisBot",
+            "region": "westus",
+            "subscriptionKey": "",
+            "version": "0.1"
+        },
+        {
+            "type": "endpoint",
+            "endpoint": "http://localhost:3978/api/messages",
+            "name": "test",
+            "id": "160"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "path": "C:\\Users\\Jamie\\source\\repos\\cognitiveservices\\ContactBot\\ContactAssistant.bot",
+    "overrides": null
 }

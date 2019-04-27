@@ -2,9 +2,8 @@
 // Licensed under the MIT License.
 // Generated with `dotnet new corebot` vX.X.X
 
-using System;
-using System.IO;
-using System.Linq;
+using ContactAssistant.Models;
+using ContactAssistant.StateManagement;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Bot.Builder;
@@ -14,6 +13,9 @@ using Microsoft.Bot.Connector.Authentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
+using System.IO;
+using System.Linq;
 
 namespace ContactAssistant
 {
@@ -129,11 +131,12 @@ namespace ContactAssistant
 
             services.AddBot<ContactAssistantBot>(options =>
           {
+
               options.CredentialProvider = new SimpleCredentialProvider(endpointService.AppId, endpointService.AppPassword);
 
-                // Catches any errors that occur during a conversation turn and logs them to currently
-                // configured ILogger.
-                ILogger logger = _loggerFactory.CreateLogger<ContactAssistantBot>();
+              // Catches any errors that occur during a conversation turn and logs them to currently
+              // configured ILogger.
+              ILogger logger = _loggerFactory.CreateLogger<ContactAssistantBot>();
 
               options.OnTurnError = async (context, exception) =>
               {
@@ -141,6 +144,17 @@ namespace ContactAssistant
                   await context.SendActivityAsync("Sorry, it looks like something went wrong.");
               };
           });
+
+           services.AddSingleton<StateBotAccessors>(sp =>
+           {
+               // Create the custom state accessor.
+               var accessors = new StateBotAccessors(conversationState, userState)
+               {
+                   ContactAccessor = conversationState.CreateProperty<Contact>(StateBotAccessors.ContactAccessorName),
+                   ContactListAccessor = conversationState.CreateProperty<ContactList>(StateBotAccessors.ContactListAccessorName)
+               };
+               return accessors;
+           });
         }
 
         /// <summary>

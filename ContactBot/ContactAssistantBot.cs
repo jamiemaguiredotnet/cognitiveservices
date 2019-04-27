@@ -7,6 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using ContactAssistant.Dialogs.Contacts;
+using ContactAssistant.Models;
+using ContactAssistant.StateManagement;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
@@ -41,14 +44,17 @@ namespace ContactAssistant
         private readonly UserState _userState;
         private readonly ConversationState _conversationState;
         private readonly BotServices _services;
+        private readonly StateBotAccessors _accessors;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CoreBot"/> class.
         /// <param name="botServices">Bot services.</param>
         /// <param name="accessors">Bot State Accessors.</param>
         /// </summary>
-        public ContactAssistantBot(BotServices services, UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
+        public ContactAssistantBot(StateBotAccessors accessors, BotServices services, UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
         {
+            _accessors = accessors ?? throw new System.ArgumentNullException(nameof(accessors));
+
             _services = services ?? throw new ArgumentNullException(nameof(services));
             _userState = userState ?? throw new ArgumentNullException(nameof(userState));
             _conversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));
@@ -64,6 +70,9 @@ namespace ContactAssistant
 
             Dialogs = new DialogSet(_dialogStateAccessor);
             Dialogs.Add(new GreetingDialog(_greetingStateAccessor, loggerFactory));
+            Dialogs.Add(new AddContactDialogue(_accessors, loggerFactory));
+            Dialogs.Add(new ViewContactsDialogue(_accessors, loggerFactory));
+            Dialogs.Add(new DeleteContactDialogue(_accessors, loggerFactory));
         }
 
         private DialogSet Dialogs { get; set; }
@@ -123,15 +132,15 @@ namespace ContactAssistant
                                     break;
                                 case ContactAdd:
                                     Console.WriteLine("Entered Contact Add");
-                                    //await dc.BeginDialogAsync(nameof(AddContactDialog));
+                                    await dc.BeginDialogAsync(nameof(AddContactDialogue));
                                     break;
                                 case ContactDelete:
                                     Console.WriteLine("Entered Contact Delete");
-                                    //await dc.BeginDialogAsync(nameof(DeleteContactDialog));
+                                    await dc.BeginDialogAsync(nameof(DeleteContactDialogue));
                                     break;
                                 case ContactView:
                                     Console.WriteLine("Entered Contact View");
-                                    //await dc.BeginDialogAsync(nameof(ViewContactsDialog));
+                                    await dc.BeginDialogAsync(nameof(ViewContactsDialogue));
                                     break;
 
                                 case NoneIntent:
@@ -165,11 +174,11 @@ namespace ContactAssistant
                     // Iterate over all new members added to the conversation.
                     foreach (var member in activity.MembersAdded)
                     {
-                        // Greet anyone that was not the target (recipient) of this message.
-                        // To learn more about Adaptive Cards,
-                        // See https://aka.ms/msbot-adaptivecards for more details.
                         if (member.Id != activity.Recipient.Id)
                         {
+
+                            await _accessors.ContactListAccessor.SetAsync(turnContext, new ContactList());
+
                             var welcomeCard = CreateAdaptiveCardAttachment();
                             var response = CreateResponse(activity, welcomeCard);
                             await dc.Context.SendActivityAsync(response);

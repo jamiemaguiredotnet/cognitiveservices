@@ -1,17 +1,17 @@
-﻿using System;
+﻿using CognitiveSamples.LUIS;
 using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
 using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
-using System.Collections.Generic;
 using Microsoft.Rest;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Tweetinvi.Models;
-using System.Configuration;
 using Tweetinvi;
+using Tweetinvi.Models;
 using Tweetinvi.Parameters;
-using CognitiveSamples.LUIS;
-using Newtonsoft.Json;
 
 namespace CognitiveSamples
 {
@@ -23,7 +23,7 @@ namespace CognitiveSamples
         private static string _AccessToken = ConfigurationManager.AppSettings.Get("AccessToken");
         private static string _AccessTokenSecret = ConfigurationManager.AppSettings.Get("AccessTokenSecret");
 
-        class ApiKeyServiceClientCredentials : ServiceClientCredentials
+        private class ApiKeyServiceClientCredentials : ServiceClientCredentials
         {
             public override Task ProcessHttpRequestAsync(HttpRequestMessage request, CancellationToken cancellationToken)
             {
@@ -56,10 +56,10 @@ namespace CognitiveSamples
             }
         }
 
-
-        private static void ProcessSentiment(string tweetid,string text)
+        private static void ProcessSentiment(string tweetid, string text)
         {
             ITextAnalyticsAPI client = new TextAnalyticsAPI(new ApiKeyServiceClientCredentials());
+
             client.AzureRegion = AzureRegions.Westeurope;
 
             SentimentBatchResult results = client.SentimentAsync(
@@ -70,6 +70,30 @@ namespace CognitiveSamples
             foreach (var document in results.Documents)
             {
                 Console.WriteLine("Document ID: {0} , Sentiment Score: {1:0.00}", document.Id, document.Score);
+            }
+        }
+
+        private static void ProcessEntities(string tweetid, string text)
+        {
+            ITextAnalyticsAPI client = new TextAnalyticsAPI(new ApiKeyServiceClientCredentials());
+            client.AzureRegion = AzureRegions.Westeurope;
+
+            EntitiesBatchResult result2 = client.EntitiesAsync(new MultiLanguageBatchInput(
+                        new List<MultiLanguageInput>()
+                        {
+                          new MultiLanguageInput("en", tweetid + ":" + text, text)
+                        })).Result;
+
+            foreach (var document in result2.Documents)
+            {
+                Console.WriteLine("Document ID: {0} ", document.Id);
+
+                Console.WriteLine("\t Entities:");
+
+                foreach (EntityRecord entity in document.Entities)
+                {
+                    Console.WriteLine("\t\t" + entity.Name + " " + entity.WikipediaUrl);
+                }
             }
         }
 
@@ -95,7 +119,7 @@ namespace CognitiveSamples
             RateLimit.RateLimitTrackerMode = RateLimitTrackerMode.TrackAndAwait;
 
             long sinceId = 1;
-            
+
             var searchParameter = new SearchTweetsParameters(hashtag)
             {
                 SearchType = SearchResultType.Recent,
@@ -120,13 +144,15 @@ namespace CognitiveSamples
             //ProcessSentiment("2", "I can't stand this new iphone");
             //ProcessSentiment("3", "I'm undecided about this new iphone, will wait a few more weeks");
 
+            //ProcessEntities("1", "I love this new iphone");
+            //ProcessEntities("2", "I can't stand this new iphone");
+            //ProcessEntities("3", "I'm undecided about this new iphone, will wait a few more weeks");
 
-            //ProcessKeyPhrases("1", "I love this new iphone, almost got a samsung instead!");
+            //ProcessKeyPhrases("1", "I love this new iphone");
             //ProcessKeyPhrases("2", "I can't stand this new iphone");
-            //ProcessKeyPhrases("3", "I can't make my mind up about this new iphone, I need to play with some more of its features");
+            //ProcessKeyPhrases("3", "I'm undecided about this new iphone, will wait a few more weeks");
 
             LUISResult lUISResultLead = GetLUISResult("I'm thinking of getting a new phone, any recommendations?").Result;
-            LUISResult lUISResultNoLead = GetLUISResult("I doubt I'll get a new phone this month").Result;
         }
     }
 }

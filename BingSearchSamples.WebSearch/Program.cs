@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BingSearchSamples.WebSearch
 {
@@ -14,13 +10,14 @@ namespace BingSearchSamples.WebSearch
         {
             try
             {
-                var client = new HttpClient();
-                var queryString = string.Empty;
+                HttpClient client = new HttpClient();
+                string queryString = "Brexit";
+                string azureKey = "4ddd6691d27f424ba5f1f3b819fbdd67";
 
-                // Request headers
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "<your key here>");
+                // ssetup request headers
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", azureKey);
 
-                var url = "https://api.cognitive.microsoft.com/bing/v7.0/search?q=bing maps";
+                var url = "https://api.cognitive.microsoft.com/bing/v7.0/search?q=" + queryString;
 
                 HttpResponseMessage response = client.GetAsync(url).Result;
 
