@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CognitiveSamples", "CognitiveSamples\CognitiveSamples.csproj", "{98026BA6-A662-46FC-926C-EF1BF73F0F9D}"
 EndProject
@@ -22,6 +22,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.VideoSearch", "BingSearchSamples.VideoSearch\BingSearchSamples.VideoSearch.csproj", "{6C94F692-48C5-4CAC-88C0-ACFA46BF1FAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearchSamples.NewsSearch", "BingSearchSamples.NewsSearch\BingSearchSamples.NewsSearch.csproj", "{38F7945D-2D9E-4660-9F26-D3503CD64167}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageSamples.TextAnalytics", "LanguageSamples.TextAnalytics\LanguageSamples.TextAnalytics.csproj", "{2474F085-596A-4951-81D0-17FAF9FF6F91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVP.Book.Source", "MVP.Book.Source\MVP.Book.Source.csproj", "{106BD73F-B288-47FF-B4D1-7463170E281A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisionSamples.ComputerVision", "VisionSamples.ComputerVision\VisionSamples.ComputerVision.csproj", "{C9B426CE-D291-40EE-A583-EDEA52EDFD70}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisionSamples.CustomVision", "VisionSamples.CustomVision\VisionSamples.CustomVision.csproj", "{54171EC6-5325-4657-9D33-B8B4A93A99FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptiveBot", "AdaptiveBot\AdaptiveBot.csproj", "{973129BD-7585-42CB-81D0-27A06260164A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +79,26 @@ Global
 		{38F7945D-2D9E-4660-9F26-D3503CD64167}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38F7945D-2D9E-4660-9F26-D3503CD64167}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38F7945D-2D9E-4660-9F26-D3503CD64167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2474F085-596A-4951-81D0-17FAF9FF6F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2474F085-596A-4951-81D0-17FAF9FF6F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2474F085-596A-4951-81D0-17FAF9FF6F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2474F085-596A-4951-81D0-17FAF9FF6F91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{106BD73F-B288-47FF-B4D1-7463170E281A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{106BD73F-B288-47FF-B4D1-7463170E281A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{106BD73F-B288-47FF-B4D1-7463170E281A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{106BD73F-B288-47FF-B4D1-7463170E281A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B426CE-D291-40EE-A583-EDEA52EDFD70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B426CE-D291-40EE-A583-EDEA52EDFD70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B426CE-D291-40EE-A583-EDEA52EDFD70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B426CE-D291-40EE-A583-EDEA52EDFD70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54171EC6-5325-4657-9D33-B8B4A93A99FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54171EC6-5325-4657-9D33-B8B4A93A99FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54171EC6-5325-4657-9D33-B8B4A93A99FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54171EC6-5325-4657-9D33-B8B4A93A99FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{973129BD-7585-42CB-81D0-27A06260164A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973129BD-7585-42CB-81D0-27A06260164A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973129BD-7585-42CB-81D0-27A06260164A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{973129BD-7585-42CB-81D0-27A06260164A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
